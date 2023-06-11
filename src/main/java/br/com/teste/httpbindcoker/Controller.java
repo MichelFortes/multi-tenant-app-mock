@@ -16,13 +16,8 @@ public class Controller {
     @Value("${tenant}")
     private String tenant;
 
-    @RequestMapping(value = "/customers")
+    @RequestMapping(value = "/")
     public ResponseEntity<RequestInfoDto> customer(HttpServletRequest request) {
-        return body(request);
-    }
-
-    @RequestMapping(value = "/enterprises")
-    public ResponseEntity<RequestInfoDto> enterprises(HttpServletRequest request) {
         return body(request);
     }
 
