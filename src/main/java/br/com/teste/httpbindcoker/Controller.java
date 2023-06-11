@@ -16,7 +16,7 @@ public class Controller {
     @Value("${tenant}")
     private String tenant;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/**")
     public ResponseEntity<RequestInfoDto> customer(HttpServletRequest request) {
         return body(request);
     }
