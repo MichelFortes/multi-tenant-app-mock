@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class Controller {
 
-    @Value("${tenant}")
-    private String tenant;
+    @Value("${container}")
+    private String container;
 
     @RequestMapping(value = "/**")
-    public ResponseEntity<RequestInfoDto> customer(HttpServletRequest request) {
+    public ResponseEntity<ResponseDto> customer(HttpServletRequest request) {
         return body(request);
     }
 
-    private ResponseEntity<RequestInfoDto> body(HttpServletRequest request) {
-        RequestInfoDto dto = new RequestInfoDto(tenant, request.getMethod(), request.getRequestURL().toString());
+    private ResponseEntity<ResponseDto> body(HttpServletRequest request) {
+        ResponseDto dto = new ResponseDto(container, request.getMethod(), request.getRequestURL().toString());
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -1,12 +1,12 @@
 package br.com.teste.httpbindcoker;
 
-public class RequestInfoDto {
+public class ResponseDto {
 
     public final String container;
     public final String method;
     public final String url;
 
-    public RequestInfoDto(String container, String method, String url) {
+    public ResponseDto(String container, String method, String url) {
         this.container = container;
         this.method = method;
         this.url = url;
